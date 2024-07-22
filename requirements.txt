@@ -1,0 +1,4 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+pillow==10.2.0
+sentence-transformers==2.5.1
+torch
