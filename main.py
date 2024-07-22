@@ -8,7 +8,7 @@ from sentence_transformers import SentenceTransformer, util
 from PIL import Image
 
 print("Loadin clip model")
-model = SentenceTransformer('clip-ViT-B-32')
+model = SentenceTransformer('clip-ViT-B-32', cache_folder="/var/task/.cache")
 
 print("Loaded clip")
 

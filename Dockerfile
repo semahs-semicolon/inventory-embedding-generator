@@ -6,7 +6,8 @@ COPY requirements.txt ${LAMBDA_TASK_ROOT}
 # Install the specified packages
 RUN pip install -r requirements.txt
 
-RUN python -c 'from sentence_transformers import SentenceTransformer; embedder = SentenceTransformer("clip-ViT-B-32")'
+RUN mkdir /var/task/.cache
+RUN python -c 'from sentence_transformers import SentenceTransformer; embedder = SentenceTransformer("clip-ViT-B-32", cache_folder="/var/task/.cache")'
 
 # Copy function code
 COPY main.py ${LAMBDA_TASK_ROOT}
